@@ -1,0 +1,20 @@
+version: "3"
+services:
+  api-canil: 
+    image: api-canil
+    container_name: api-canil
+    ports:
+      - "3000:3000"
+    networks:
+      - grpcanil
+  db-canil:
+    image: db-canil
+    container_name: db-canil
+    ports: 
+      - "5432:5432"
+    networks: 
+      - grpcanil
+networks: 
+  grpcanil:
+    name: grpcanil
+    driver: bridge
